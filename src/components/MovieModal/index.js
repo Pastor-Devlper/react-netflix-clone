@@ -1,4 +1,3 @@
-import React from 'react';
 import './MovieModal.css';
 
 const MovieModal = ({

@@ -14,6 +14,7 @@ const MovieModal = ({
 }) => {
   const ref = useRef();
   useOnClickOutside(ref, () => {
+    document.body.style.overflowY = 'auto';
     setModalOpen(false);
   });
 
@@ -21,7 +22,13 @@ const MovieModal = ({
     <div className="presentation" role="presentation">
       <div className="wrapper-modal">
         <div className="modal" ref={ref}>
-          <span onClick={() => setModalOpen(false)} className="modal-close">
+          <span
+            onClick={() => {
+              document.body.style.overflowY = 'auto';
+              setModalOpen(false);
+            }}
+            className="modal-close"
+          >
             X
           </span>
           <img

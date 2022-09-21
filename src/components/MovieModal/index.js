@@ -1,6 +1,5 @@
 import movieTrailer from 'movie-trailer';
 import { useState, useEffect, useRef } from 'react';
-import { Autoplay } from 'swiper';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 import './MovieModal.css';
 
@@ -26,10 +25,10 @@ const MovieModal = ({
     if (trailerId) {
       setTrailerId('');
     } else {
-      movieTrailer(`${title}` || `${name}` || '')
+      movieTrailer(title || name || '')
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
-          setTrailerId(urlParams);
+          setTrailerId(urlParams.get('v'));
         })
         .catch((error) => console.log(error));
     }
@@ -64,7 +63,7 @@ const MovieModal = ({
             <iframe
               width="100%"
               height="315"
-              src={`https://www.youtube.com/embed/${movieTrailer}?autoPlay=1`}
+              src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1`}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

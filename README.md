@@ -3,6 +3,6 @@
 react netflix clone app <br>
 <https://pastor-devlper.github.io/react-netflix-clone/>
 
-![captued image 01](./captured01)
+![captued image 01](./Capture01.png)
 
-![captued image 02](./captured02)
+![captued image 02](./Capture02.png)
